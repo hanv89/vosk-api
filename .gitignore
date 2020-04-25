@@ -24,3 +24,14 @@ wheelhouse
 __pycache__
 *.egg-info
 python/dist
+
+# Java
+*.so
+java/org
+java/model-en
+java/*.cc
+
+# CSharp
+csharp/gen
+csharp/*.exe
+csharp/*.c
