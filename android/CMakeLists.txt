@@ -8,6 +8,9 @@ set(KALDI_SUFFIX "arm_32")
 elseif ("x${ANDROID_ABI}" STREQUAL "xarm64-v8a")
 set(OPENBLAS_ARCH "armv8")
 set(KALDI_SUFFIX "arm_64")
+elseif ("x${ANDROID_ABI}" STREQUAL "xx86")
+set(OPENBLAS_ARCH "atom")
+set(KALDI_SUFFIX "x86")
 else ("x${ANDROID_ABI}" STREQUAL "xarmeabi-v7a")
 set(OPENBLAS_ARCH "atom")
 set(KALDI_SUFFIX "x86_64")
@@ -45,6 +48,7 @@ target_link_libraries( kaldi_jni
              ${KALDI_ROOT}/src/tree/kaldi-tree.a
              ${KALDI_ROOT}/src/feat/kaldi-feat.a
              ${KALDI_ROOT}/src/lat/kaldi-lat.a
+             ${KALDI_ROOT}/src/lm/kaldi-lm.a
              ${KALDI_ROOT}/src/hmm/kaldi-hmm.a
              ${KALDI_ROOT}/src/transform/kaldi-transform.a
              ${KALDI_ROOT}/src/cudamatrix/kaldi-cudamatrix.a
